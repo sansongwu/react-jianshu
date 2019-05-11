@@ -35,6 +35,7 @@ class TodoList extends Component {
     handleInputChange(e) {
       const value = e.target.value
       /* 异步修改state */
+      /* 为什么要使用异步setState呢??? */
         this.setState(() => ({
           inputValue: value
         }))

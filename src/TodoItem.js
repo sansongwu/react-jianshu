@@ -10,6 +10,7 @@ class TodoItem extends React.Component {
     render() {
         // return <div onClick={this.handleClick}>{this.props.content}</div>
         const {content, test} = this.props // es6 语法 解构赋值
+        // 模板 -> React.createElement -> 虚拟DOM(js对象) -> 真实的DOM
         return (
            <div onClick={this.handleClick}>
             {test}-{content}
