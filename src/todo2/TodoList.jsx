@@ -39,7 +39,11 @@ class TodoList extends Component {
         }
         /* 将acton 传入store */
         store.dispatch(action);
-        /* 获取最新的store里的state 从而更新该组件的state */
+        /**
+         * 获取最新的store里的state 从而更新该组件的state 
+         * 如果数据很多 不应该重新获取state覆盖当前组件state
+         * 需要使用 store.subscribe 监听store的变化 回调中执行修改state
+         * **/
         this.setState(store.getState);
     }
 
