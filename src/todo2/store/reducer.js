@@ -1,6 +1,8 @@
+import * as types from './actionTypes';
+
 const defaultState = {
     inputValue: 'default value',
-    list: [1, 2]
+    list: []
 }
 
 export default (state = defaultState, action) => {
@@ -14,6 +16,12 @@ export default (state = defaultState, action) => {
         const newState = JSON.parse(JSON.stringify(state));
         newState.list.push(newState.inputValue)
         newState.inputValue = '';
+        return newState;
+    }
+
+    if (action.type === types.INIT_LIST) {
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.list = action.payload.value;
         return newState;
     }
 
